@@ -1,3 +1,6 @@
+from PyQt5.QtCore import QTime
+
+
 win_x, win_y = 200, 100
 win_width, win_height = 1000, 600
 
@@ -27,9 +30,15 @@ txt_hinttest3 = '0'
 txt_starttest1 = 'Начать первый тест'
 txt_starttest2 = 'Начать делать приседания'
 txt_starttest3 = 'Начать финальный тест'
-txt_timer = '00:00:15'
 
+time = QTime(0, 0, 0)
+txt_timer = time.toString("hh:mm:ss")
 
 txt_finalwin = 'Результаты'
 txt_index = 'Индекс Руфье: '
 txt_workheart = 'Работоспособность сердца: '
+txt_res1 = "низкая. Срочно обратитесь к врачу!"
+txt_res2 = "удовлетворительная. Обратитесь к врачу!"
+txt_res3 = "средняя. Возможно, стоит дополнительно обследоваться у врача."
+txt_res4 = "выше среднего"
+txt_res5 = "высокая"
