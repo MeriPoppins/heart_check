@@ -6,6 +6,14 @@ from instr import *
 from final_win import FinalWin
 
 
+class Experiment():
+    def __init__(self, age, pulse_1, pulse_2, pulse_3):
+        self.age = age
+        self.p1 = pulse_1
+        self.p2 = pulse_2
+        self.p3 = pulse_3
+
+
 class TestWin(QWidget):
     def __init__(self):
         super().__init__()
@@ -56,7 +64,8 @@ class TestWin(QWidget):
         self.setLayout(self.h_line)
 
     def next_click(self):
-        self.fin_win = FinalWin()
+        self.exp = Experiment(int(self.age.text()), int(self.pulse_1.text()), int(self.pulse_2.text()), int(self.pulse_3.text()))
+        self.fin_win = FinalWin(self.exp)
         self.hide()
 
     def timer_start(self):
